@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { sprintf } from "sprintf-js";
+import { css } from "@emotion/css";
 
 function App() {
   const [pulls, setPulls] = useState(0);
@@ -43,7 +44,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div
+      className={css`
+        font-family: sans-serif;
+      `}
+    >
       <label>
         Number of pulls:{" "}
         <input
