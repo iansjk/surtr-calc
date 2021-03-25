@@ -55,8 +55,10 @@ function App() {
           type="number"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const toNumber = parseInt(e.target.value, 10);
-            if (!Number.isNaN(toNumber)) {
+            if (!Number.isNaN(toNumber) && 0 <= toNumber) {
               setPulls(toNumber);
+            } else {
+              setPulls(0);
             }
           }}
           defaultValue={pulls}
@@ -69,8 +71,10 @@ function App() {
           type="number"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             const toNumber = parseInt(e.target.value, 10);
-            if (!Number.isNaN(toNumber) && toNumber < 99) {
+            if (!Number.isNaN(toNumber) && 0 <= toNumber && toNumber < 99) {
               setPity(toNumber);
+            } else {
+              setPity(0);
             }
           }}
           defaultValue={pity}
